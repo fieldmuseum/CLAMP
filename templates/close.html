@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+</head>
+<header>
+</header>
+<body>
+    <div class="info">
+        <section>
+            <h1 class="title">CLAMP</h1>
+            <h3 class="sub_title">TEETH CLOSENESS</h3>
+        </section>
+        <form method="POST">
+            <p>Chose photo that matches your leaf best:</p>
+            <!--if the teeth are both close and distant and some leaves have teeth and others do not, 0.25 NO PHOTOS-->
+            <!--if the teeth are close and some leaves have teeth and others do not, 0.5 NO PHOTOS-->
+            <!--if all teeth are close and all leaves are toothed.-->
+            <!--1-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
+                <img src="{{ url_for('static', filename='/images/N.png') }}" alt="icon"/>
+            </label>
+            <!--2-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
+                <img src="{{ url_for('static', filename='/images/O.png') }}" alt="icon"/>
+            </label>
+            <!--if the teeth are both close and distant and all leaves are toothed-->
+            <!--3-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc05 }}" checked>
+                <img src="{{ url_for('static', filename='/images/P.png') }}" alt="icon"/>
+            </label>
+            <!--4-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc05 }}" checked>
+                <img src="{{ url_for('static', filename='/images/Q.png') }}" alt="icon"/>
+            </label><br>
+
+            <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+</body>
+<footer>
+</footer>
+</html>

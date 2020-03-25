@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+</head>
+<header>
+</header>
+<body>
+    <div class="info">
+        <section>
+            <h1 class="title">CLAMP</h1>
+            <h3 class="sub_title">FINAL RESULT</h3>
+            <p>Lobing {{ result.Lobing }}</p>
+            <p>Margin {{ result.Margin }}</p>
+            <p>Teeth regularity {{ result.Regularity }}</p>
+            <p>Teeth closeness {{ result.Closeness }}</p>
+            <p>Teethshape {{ result.Teethshape }}</p>
+            <p>Acute {{ result.Acute }}</p>
+            <p>Compound {{ result.Compound }}</p>
+            <p>Apex {{ result.Apex }}</p>
+            <p>Base {{ result.Base }}</p>
+            <p>Shape {{ result.Shape }}</p>
+            <p>Ratio {{ result.Ratio }}</p>
+            <p>Size {{ result.Size }}</p>
+        </section>
+            <a class="buttn_link" href="{{ url_for('home') }}">Go back to the first page</a><br>
+    </div>
+</body>
+<footer>
+</footer>
+</html>

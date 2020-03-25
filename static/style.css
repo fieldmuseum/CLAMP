@@ -1,0 +1,155 @@
+body {
+    background: white;
+    font-family: Arial;
+    color: green;
+    text-align: center;
+}
+
+.a {
+    color: green;
+    text-decoration: none;
+}
+
+.buttn_link {
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 55px;
+    padding: 0px;
+}
+
+.sub_title {
+    font-size: 30px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.img {
+    margin: 2px;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.justify {
+    text-align: justify;
+}
+
+.text_10 {
+    font: 10px;
+}
+
+.border {
+    border: grey 1px solid;
+}
+
+.marg20 {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.marg10 {
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.padd5 {
+    padding: 5px;
+}
+
+input[type=text], select {
+    width: 50%;
+    length: 30%;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=submit], input[type=button], input[type=reset], .check-list {
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    background-color: red;
+}
+
+input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input[type=radio] + img {
+    cursor: pointer;
+}
+
+input[type=radio]:checked + img {
+    outline: 2px solid #f00;
+}
+
+.radio_bttn {
+    position: absolute;
+    opacity: 100;
+    width: 0;
+    height: 0;
+}
+
+.check-list {
+  display: inline-block;
+}
+.check-list {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 50px 5px 10px;
+  border: 1px solid #ccc;
+}
+.check-list .anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  padding: 5px;
+  right: 10px;
+  top: 20%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+

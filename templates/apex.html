@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+</head>
+<header>
+</header>
+<body>
+    <div class="info">
+        <section>
+            <h1 class="title">CLAMP</h1>
+            <h3 class="sub_title">APEX FORM</h3>
+        </section>
+        <form method="POST">
+            <p>Chose 1 photo in each category that matches the <mark>TOP</mark> of your leaf best.</p>
+            <p>If none of the shown photos in the category looks like your leaf, check "None"</p>
+            <!--!!NEED TO ADD REAL VALUES AND FIX ID!!-->
+            <!--Apex emarginate-->
+            <fieldset id="group1">
+            <!--1-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AB.png') }}" alt="icon"/>
+            </label>
+            <!--2-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AC.png') }}" alt="icon"/>
+            </label>
+            <!--3-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AD.png') }}" alt="icon"/>
+            </label>
+            <!--None-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc0 }}" >
+                <img src="{{ url_for('static', filename='/images/None.png') }}" alt="icon"/>
+            </label>
+            </fieldset>
+            <!--Apex round-->
+            <fieldset id="group2">
+            <!--4-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AE.png') }}" alt="icon"/>
+            </label>
+            <!--5-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AF.png') }}" alt="icon"/>
+            </label>
+            <!--6-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" d>
+                <img src="{{ url_for('static', filename='/images/AG.png') }}" alt="icon"/>
+            </label>
+            <!--7-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AH.png') }}" alt="icon"/>
+            </label>
+            <!--None-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc0 }}" >
+                <img src="{{ url_for('static', filename='/images/None.png') }}" alt="icon"/>
+            </label>
+            </fieldset>
+            <!--Apex acute-->
+            <fieldset id="group3">
+            <!--8-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AI.png') }}" alt="icon"/>
+            </label>
+            <!--9-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AJ.png') }}" alt="icon"/>
+            </label>
+            <!--10-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AK.png') }}" alt="icon"/>
+            </label>
+            <!--11-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AL.png') }}" alt="icon"/>
+            </label>
+            <!--None-->
+             <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc0 }}" >
+                <img src="{{ url_for('static', filename='/images/None.png') }}" alt="icon"/>
+            </label>
+            </fieldset>
+            <!--Apex attenuate-->
+            <fieldset id="group4">
+            <!--12-->
+            <label class="img">
+                <input type="radio" name="group4" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AM.png') }}" alt="icon"/>
+            </label>
+            <!--13-->
+            <label class="img">
+                <input type="radio" name="group4" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AN.png') }}" alt="icon"/>
+            </label>
+            <!--14-->
+            <label class="img">
+                <input type="radio" name="group4" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AO.png') }}" alt="icon"/>
+            </label>
+            <!--15-->
+            <label class="img">
+                <input type="radio" name="group4" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AP.png') }}" alt="icon"/>
+            </label>
+            <!--None-->
+             <label class="img">
+                <input type="radio" name="group4" value="{{ scores.sc0 }}" >
+                <img src="{{ url_for('static', filename='/images/None.png') }}" alt="icon"/>
+            </label><br>
+            </fieldset>
+                <input type='reset' value="UNCHECK ALL"/>
+                <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+</body>
+<footer>
+</footer>
+</html>

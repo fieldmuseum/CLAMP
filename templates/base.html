@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
+</head>
+<header>
+</header>
+<body>
+    <div class="info">
+        <section>
+            <h1 class="title">CLAMP</h1>
+            <h3 class="sub_title">BASE FORM</h3>
+        </section>
+        <form method="POST">
+            <p>Chose photo(s) (you can pick from 1 to 3 photos) that matches the <mark>BOTTOM</mark> of your leaf best:</p>
+            <!--!!NEED TO ADD REAL VALUES AND FIX ID!!-->
+            <!--Base cordate-->
+            <fieldset id="group1">
+            <!--1-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AQ.png') }}" alt="icon"/>
+            </label>
+            <!--2-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AR.png') }}" alt="icon"/>
+            </label>
+            <!--3-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AS.png') }}" alt="icon"/>
+            </label>
+            <!--4-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AT.png') }}" alt="icon"/>
+            </label>
+            <!--None-->
+            <label class="img">
+                <input type="radio" name="group1" value="{{ scores.sc0 }}" >
+                <img src="{{ url_for('static', filename='/images/None.png') }}" alt="icon"/>
+            </label>
+            </fieldset>
+            <!--Base round-->
+            <fieldset id="group2">
+            <!--5-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AU.png') }}" alt="icon"/>
+            </label>
+            <!--6-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AV.png') }}" alt="icon"/>
+            </label>
+            <!--7-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AE.png') }}" alt="icon"/>
+            </label>
+            <!--8-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AY.png') }}" alt="icon"/>
+            </label>
+            <!--None-->
+            <label class="img">
+                <input type="radio" name="group2" value="{{ scores.sc0 }}" >
+                <img src="{{ url_for('static', filename='/images/None.png') }}" alt="icon"/>
+            </label>
+            </fieldset>
+            <!--Base acute-->
+            <fieldset id="group3">
+            <!--9-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/AZ.png') }}" alt="icon"/>
+            </label>
+            <!--10-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/BA.png') }}" alt="icon"/>
+            </label>
+            <!--11-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/BB.png') }}" alt="icon"/>
+            </label>
+            <!--12-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc1 }}" >
+                <img src="{{ url_for('static', filename='/images/BC.png') }}" alt="icon"/>
+            </label>
+            <!--None-->
+            <label class="img">
+                <input type="radio" name="group3" value="{{ scores.sc0 }}" >
+                <img src="{{ url_for('static', filename='/images/None.png') }}" alt="icon"/>
+            </label><br>
+            </fieldset>
+
+                <input type='reset' value="UNCHECK ALL"/>
+                <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+</body>
+<footer>
+</footer>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+</head>
+<header>
+</header>
+<body>
+    <div class="info">
+        <section>
+            <h1 class="title">CLAMP</h1>
+            <h3 class="sub_title">LOBING</h3>
+        </section>
+        <form method="POST">
+            <p>Chose photo that matches your leaf best:</p>
+            <!--if some leaves are lobed and some are unlobed, 0.5- NO PHOTOS-->
+            <!--1-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc0 }}" checked>
+                <img src="{{ url_for('static', filename='/images/A.png') }}" alt="icon"/>
+            </label>
+            <!--2-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
+                <img src="{{ url_for('static', filename='/images/B.png') }}" alt="icon"/>
+            </label>
+            <!--3-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
+                <img src="{{ url_for('static', filename='/images/C.png') }}" alt="icon"/>
+            </label>
+            <!--4-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
+                <img src="{{ url_for('static', filename='/images/D.png') }}" alt="icon"/>
+            </label>
+            <!--5-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc0 }}" checked>
+                <img src="{{ url_for('static', filename='/images/E.png') }}" alt="icon"/>
+            </label>
+            <!--6-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
+                <img src="{{ url_for('static', filename='/images/F.png') }}" alt="icon"/>
+            </label><br>
+
+            <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+</body>
+<footer>
+</footer>
+</html>

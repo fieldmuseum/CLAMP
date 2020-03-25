@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
+</head>
+<header>
+</header>
+<body>
+    <div class="info">
+        <section>
+            <h1 class="title">CLAMP</h1>
+            <h3 class="sub_title">TEETH COMPOUND</h3>
+        </section>
+        <form method="POST">
+            <p>Chose photo that matches your leaf best:</p>
+            <!--for species that have some, but less than 50 percent, teeth that are compound-->
+            <!--1-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc05 }}" checked>
+                <img src="{{ url_for('static', filename='/images/X.png') }}" alt="icon"/>
+            </label>
+            <!--ffor species that have at least 50 percent teeth that are compound-->
+            <!--2-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
+                <img src="{{ url_for('static', filename='/images/Y.png') }}" alt="icon"/>
+            </label>
+            <!--for species that have no compound teeth-->
+            <!--3-->
+            <label class="img">
+                <input type="radio" name="scores" value="{{ scores.sc0 }}" checked>
+                <img src="{{ url_for('static', filename='/images/R.png') }}" alt="icon"/>
+            </label><br>
+
+            <input type="submit" value="Submit"><br>
+        </form>
+    </div>
+</body>
+<footer>
+</footer>
+</html>
