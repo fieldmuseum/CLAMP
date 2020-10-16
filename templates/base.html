@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-        <script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div class="info">
         <section>
-            <h1 class="title">CLAMP</h1>
-            <h3 class="sub_title">BASE FORM</h3>
+            <h3 class="title">BASE FORM</h3>
+            <p>Chose 1 photo in each category that matches the <mark>BOTTOM</mark> of your leaf best. <br>
+                If none of the shown photos in the category looks like your leaf, check "None"</p>
         </section>
         <form method="POST">
-            <p>Chose photo(s) (you can pick from 1 to 3 photos) that matches the <mark>BOTTOM</mark> of your leaf best:</p>
             <!--!!NEED TO ADD REAL VALUES AND FIX ID!!-->
             <!--Base cordate-->
             <fieldset id="group1">
@@ -106,7 +97,4 @@
                 <input type="submit" value="Submit"><br>
         </form>
     </div>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}

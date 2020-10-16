@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div class="info">
         <section>
-            <h1 class="title">CLAMP</h1>
-            <h3 class="sub_title">Leaf size</h3>
+            <h3 class="title">LEAF SIZE</h3>
+            <p>Look at the picture below to see nine (9) different size groups.<br>
+            Check all the groups that matches your leaf or different leaflets.<br>
+            At least one (1) group needs to be checked. You can check all nine (9) groups if you need to.</p><br>
+            <small>To find more information about leaflets, click on this <a href="https://en.wikipedia.org/wiki/Leaflet_(botany)" target="_blank">link</a></small><br>
         </section>
         <form method="POST">
-            <p>Look at the picture below to see nine (9) different size groups.</p>
-            <p>Check all the groups that matches your leaf or different leaflets.</p>
-            <p>At least one (1) group needs to be checked. You can check all nine (9) groups if you need to.</p>
-
-            <p class="text_10">Note that if a lobed leaf (Figure Z) is dissected more than half the distance from the apex (top) of the lobe to the base (bottom) of the lamina</p>
-            <p class="text_10">or to the midrib, the unit area scored is an individual lobe</p>
-
             <input type="checkbox" name="hello" value="{{ scores.sc1 }}">
             <label>GROUP 1</label>
             <input type="checkbox" name="hello" value="{{ scores.sc1 }}">
@@ -46,7 +34,4 @@
 
         </form>
     </div>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}

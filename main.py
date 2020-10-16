@@ -1,7 +1,21 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, send_from_directory
 # import requests
+import pandas as pd
+from pandas import ExcelWriter, ExcelFile
+from werkzeug.utils import secure_filename
+import os
+
+UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/uploads/'
+DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
+ALLOWED_EXTENSIONS = {'xlsx'}
+
 
 app = Flask(__name__)
+
+
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 
 
 @app.route('/')
@@ -53,6 +67,25 @@ scores = {
 result = {
 
 }
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+def create_file():
+    data4 = result
+    df4 = pd.DataFrame(data4, index=['1'])
+
+    writer = ExcelWriter('data_file.xlsx')
+    df4.to_excel(writer, 'Sheet1', index=False)
+    writer.save()
+
+
+def remove_watermark(path, filename):
+    input_file = ExcelFile(open(path, 'rb'))
+    output = ExcelWriter(path)
+
+    output_stream = open(app.config['DOWNLOAD_FOLDER'] + filename, 'wb')
+    output.write(output_stream)
 
 
 # 1. Lobing: 6 photos
@@ -331,7 +364,6 @@ def size():
         elif size == 9:
             finalsize = 0.12
             result.update({'Size': finalsize})
-        print(result)
         return redirect(url_for('final', scores=scores))
     return render_template('size.html', scores=scores)
 
@@ -339,13 +371,34 @@ def size():
 @app.route('/final', methods=['GET', 'POST'])
 def final():
     if request.method == 'POST':
-        print(result)
+
+        data4 = result
+        df4 = pd.DataFrame(data4, index=['1'])
+
+        if 'file' not in request.files:
+            print('No file attached in request')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            print('No file selected')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            remove_watermark(os.path.join(app.config['UPLOAD_FOLDER'], filename), filename)
+            return redirect(url_for('index.html', filename=filename))
+
     return render_template('final.html', result=result)
 
 
 @app.errorhandler(500)
 def internal_error(error):
     return render_template('error_500.html')
+
+@app.errorhandler(404)
+def internal_error(error):
+    return render_template('error_500.html')
+
 
 
 if __name__ == '__main__':

@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div class="info">
         <section>
-            <h1 class="title">CLAMP</h1>
-            <h3 class="sub_title">TEETH CLOSENESS</h3>
+            <h3 class="title">TEETH CLOSENESS</h3>
+            <p>Chose photo that matches your leaf best:</p>
         </section>
         <form method="POST">
-            <p>Chose photo that matches your leaf best:</p>
+            <fieldset class="marg5_2">
             <!--if the teeth are both close and distant and some leaves have teeth and others do not, 0.25 NO PHOTOS-->
             <!--if the teeth are close and some leaves have teeth and others do not, 0.5 NO PHOTOS-->
             <!--if all teeth are close and all leaves are toothed.-->
@@ -39,11 +31,8 @@
                 <input type="radio" name="scores" value="{{ scores.sc05 }}" checked>
                 <img src="{{ url_for('static', filename='/images/Q.png') }}" alt="icon"/>
             </label><br>
-
-            <input type="submit" value="Submit"><br>
+            </fieldset>
+            <input class="marg5_1" type="submit" value="Submit"><br>
         </form>
     </div>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}

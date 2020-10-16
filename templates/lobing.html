@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div class="info">
-        <section>
-            <h1 class="title">CLAMP</h1>
-            <h3 class="sub_title">LOBING</h3>
+        <section class="middle info marg5_2">
+            <h3 class="title">LOBING</h3>
+            <p>Chose photo that matches your leaf best:</p>
         </section>
         <form method="POST">
-            <p>Chose photo that matches your leaf best:</p>
+            <fieldset class="marg5_2">
             <!--if some leaves are lobed and some are unlobed, 0.5- NO PHOTOS-->
             <!--1-->
             <label class="img">
@@ -46,11 +38,8 @@
                 <input type="radio" name="scores" value="{{ scores.sc1 }}" checked>
                 <img src="{{ url_for('static', filename='/images/F.png') }}" alt="icon"/>
             </label><br>
-
-            <input type="submit" value="Submit"><br>
+            </fieldset>
+            <input class="marg5_1" type="submit" value="Submit"><br>
         </form>
     </div>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}

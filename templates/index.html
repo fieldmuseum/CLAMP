@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <section class="marg20 info">
-            <h1 class="title">CLAMP</h1>
+            <h1 class="title">CLAMP CALCULATOR</h1>
             <h3 class="sub_title">Welcome!</h3>
             <p>Click button below to start entering data</p><br>
             <a class="buttn_link" href="{{ url_for('taxonomy') }}">START</a><br>
     </section>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}

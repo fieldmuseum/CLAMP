@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div class="info">
         <section>
-            <h1 class="title">CLAMP</h1>
-            <h3 class="sub_title"></h3>
-            <p>Click on a button below to go back to the previous page. Make sure you checked all photos</p>
-            <p>and entered all the values you were asked.</p>
+            <h3 class="sub_title">Hey!</h3>
+            <p>Click on a button below to go back to the previous page. <br>
+                Make sure you checked all the photos and entered all the values you were asked.</p>
         </section>
         <form method="POST">
             <input type="button" value="Go back to the previous page" onclick="history.back(-1)" />
         </form>
     </div>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}

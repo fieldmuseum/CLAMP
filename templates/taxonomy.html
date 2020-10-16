@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-    <script type="text/javascript" src="{{ url_for('static', filename='functions.js') }}"></script>
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div>
         <section class="marg20 info">
-            <h1 class="title">CLAMP</h1>
             <h3 class="sub_title">Info</h3>
-            <p>In the fields below select/fill out the necessary information about the fossil</p>
+            <p>In the fields below select/fill out the information about the fossil</p>
         </section>
         <form method="POST" class="marg10">
 
@@ -49,7 +39,4 @@
             <input type="submit" value="Submit"><br>
         </form>
 </div>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}

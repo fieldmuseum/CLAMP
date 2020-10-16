@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}">
-</head>
-<header>
-</header>
-<body>
+{% extends "layout.html" %}
+{% block content %}
     <div class="info">
         <section>
-            <h1 class="title">CLAMP</h1>
-            <h3 class="sub_title">Length-to-width ratio</h3>
+            <h3 class="title">Length-to-width ratio</h3>
+            <p>Measure the leaf and enter width and length values below.<br>
+            If your leaf is compound of many leaflets, measure three (3) the most different in width and length leaflets.<br>
+            If you have the whole leave without any leaflets, just enter the same value three (3) times.</p>
         </section>
         <form method="POST">
-            <p>Measure the leaf and enter width and length values below.</p>
-            <p>If your leaf is compound of many leaflets, measure three (3) the most different in width and length leaflets.</p>
-            <p>If you have the whole leave without any leaflets, just enter the same value three (3) times.</p>
 
                 <div class="inline border padd5">
                 <p>Enter length value (in):</p>
@@ -42,7 +33,4 @@
                 <input type="submit" value="Submit"><br>
         </form>
     </div>
-</body>
-<footer>
-</footer>
-</html>
+{% endblock content %}
