@@ -7,26 +7,17 @@
             Margin {{ result.Margin }}<br>
             Teeth regularity {{ result.Regularity }}<br>
             Teeth closeness {{ result.Closeness }}<br>
-            Teethshape {{ result.Teethshape }}<br>
+            Teeth shape {{ result.Teethshape }}<br>
             Acute {{ result.Acute }}<br>
             Compound {{ result.Compound }}<br>
             Apex {{ result.Apex }}<br>
             Base {{ result.Base }}<br>
             Shape {{ result.Shape }}<br>
             Ratio {{ result.Ratio }}<br>
-                Size {{ result.Size }}</small>
+            Size {{ result.Size }}</small>
         </section>
 
-        <div align="center">
-            <h1>Add data to file</h1>
-            <h2>Upload new File</h2>
-            <form method=post enctype=multipart/form-data>
-                <p><input type=file name=file>
-                <input type=submit value=Upload>
-            </form>
-        </div>
-
-        <a class="buttn_link" href="{{ url_for('home') }}">Go back to the first page</a><br>
-        <input type="submit" value="Create file"><br>
+        <a class="buttn_link padd5" href="{{ url_for('home') }}">Go back to the first page</a><br>
+        <a class="buttn_link padd5" href="{{ url_for('csv') }}">Add data to CSV file</a><br>
     </div>
 {% endblock content %}

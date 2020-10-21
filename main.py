@@ -1,9 +1,6 @@
-from flask import Flask, render_template, redirect, request, url_for, send_from_directory
-# import requests
-import pandas as pd
-from pandas import ExcelWriter, ExcelFile
-from werkzeug.utils import secure_filename
+from flask import Flask, render_template, redirect, request, url_for
 import os
+from csv import DictWriter
 
 UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/uploads/'
 DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
@@ -37,6 +34,9 @@ specimen = {
     'sp3': 'Radstockia kidstonii',
 }
 
+# !! Add more flora and specimen.
+# !! Add this section to CSV
+
 
 @app.route('/taxonomy', methods=['GET', 'POST'])
 def taxonomy():
@@ -52,10 +52,6 @@ def taxonomy():
     return render_template('taxonomy.html', specimen=specimen, flora=flora)
 
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     return render_template('login.html')
-
 scores = {
     'sc0': 0,
     'sc025': 0.25,
@@ -64,34 +60,14 @@ scores = {
     'sc1': 1,
 }
 
+
 result = {
 
 }
 
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-def create_file():
-    data4 = result
-    df4 = pd.DataFrame(data4, index=['1'])
-
-    writer = ExcelWriter('data_file.xlsx')
-    df4.to_excel(writer, 'Sheet1', index=False)
-    writer.save()
-
-
-def remove_watermark(path, filename):
-    input_file = ExcelFile(open(path, 'rb'))
-    output = ExcelWriter(path)
-
-    output_stream = open(app.config['DOWNLOAD_FOLDER'] + filename, 'wb')
-    output.write(output_stream)
-
-
 # 1. Lobing: 6 photos
-# 0 if no leaves are lobed
-# !! 0.5 if some leaves are lobed and some are unlobed !!
-# 1 if all leaves are lobed
+# 0 if no leaves are lobed; 1 if all leaves lobed
+# !! no photos for 0.5 (some leaves are lobed and some not)!!
 
 
 @app.route('/lobing', methods=['GET', 'POST'])
@@ -110,9 +86,9 @@ def lobing():
 @app.route('/margin', methods=['GET', 'POST'])
 def margin():
     if request.method == 'POST':
-        margin = request.form['scores']
-        if margin == '0' or margin == '0.5':
-            result.update({'Margin': margin})
+        final_margin = request.form['scores']
+        if final_margin == '0' or final_margin == '0.5':
+            result.update({'Margin': final_margin})
             return redirect(url_for('regular', scores=scores))
         else:
             result.update({'Margin': 1})
@@ -126,8 +102,8 @@ def margin():
 @app.route('/regular', methods=['GET', 'POST'])
 def regular():
     if request.method == 'POST':
-        regular = request.form['scores']
-        result.update({'Regularity': regular})
+        final_regular = request.form['scores']
+        result.update({'Regularity': final_regular})
         return redirect(url_for('close', scores=scores))
     return render_template('regular.html', scores=scores)
 
@@ -138,8 +114,8 @@ def regular():
 @app.route('/close', methods=['GET', 'POST'])
 def close():
     if request.method == 'POST':
-        close = request.form['scores']
-        result.update({'Closeness': close})
+        final_close = request.form['scores']
+        result.update({'Closeness': final_close})
         return redirect(url_for('teethshape', scores=scores))
     return render_template('close.html', scores=scores)
 
@@ -150,8 +126,8 @@ def close():
 @app.route('/teethshape', methods=['GET', 'POST'])
 def teethshape():
     if request.method == 'POST':
-        teethshape = request.form['scores']
-        result.update({'Teethshape': teethshape})
+        final_teethshape = request.form['scores']
+        result.update({'Teethshape': final_teethshape})
         return redirect(url_for('acute', scores=scores))
     return render_template('teethshape.html', scores=scores)
 
@@ -162,27 +138,25 @@ def teethshape():
 @app.route('/acute', methods=['GET', 'POST'])
 def acute():
     if request.method == 'POST':
-        acute = request.form['scores']
-        result.update({'Acute': acute})
+        final_acute = request.form['scores']
+        result.update({'Acute': final_acute})
         return redirect(url_for('compound', scores=scores))
     return render_template('acute.html', scores=scores)
 
 
 #   2.5. Teeth compound: 2 photos
 
-
 @app.route('/compound', methods=['GET', 'POST'])
 def compound():
     if request.method == 'POST':
-        compound = request.form['scores']
-        print('Compound score: ' + compound)
-        result.update({'Compound': compound})
+        final_compound = request.form['scores']
+        print('Compound score: ' + final_compound)
+        result.update({'Compound': final_compound})
         return redirect(url_for('apex', scores=scores))
     return render_template('compound.html', scores=scores)
 
 
 # 3. Apex Form: 16 photos
-
 
 @app.route('/apex', methods=['GET', 'POST'])
 def apex():
@@ -371,34 +345,53 @@ def size():
 @app.route('/final', methods=['GET', 'POST'])
 def final():
     if request.method == 'POST':
-
-        data4 = result
-        df4 = pd.DataFrame(data4, index=['1'])
-
-        if 'file' not in request.files:
-            print('No file attached in request')
-            return redirect(request.url)
-        file = request.files['file']
-        if file.filename == '':
-            print('No file selected')
-            return redirect(request.url)
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            remove_watermark(os.path.join(app.config['UPLOAD_FOLDER'], filename), filename)
-            return redirect(url_for('index.html', filename=filename))
-
+        df4 = result
     return render_template('final.html', result=result)
+
+
+# Create filename from the upload
+
+
+file_name = 'scores.csv'
+file_exists = os.path.isfile(file_name)
+
+
+@app.route('/csv', methods=['GET', 'POST'])
+def csv():
+    def append_dict_as_row(file_name, dict_of_elem, field_names):
+        with open(file_name, 'a', newline='') as write_obj:
+            # Create a writer object from csv module
+            dict_writer = DictWriter(write_obj, fieldnames=field_names)
+            # Add header only once
+            file_is_empty = os.stat(file_name).st_size == 0
+            if file_is_empty:
+                dict_writer.writeheader()
+            # Add dictionary as a row
+            dict_writer.writerow(dict_of_elem)
+
+
+    def main():
+        field_names = ['Lobing', 'Margin', 'Regularity', 'Closeness', 'Teethshape', 'Acute', 'Compound', 'Apex', 'Base',
+                       'Shape', 'Ratio', 'Size']
+        row_dict = result
+        # Append a dict as a row in csv file
+        append_dict_as_row(file_name, row_dict, field_names)
+        print('Data added to file')
+
+    if __name__ == '__main__':
+        main()
+
+    return render_template('csv.html', result=result)
 
 
 @app.errorhandler(500)
 def internal_error(error):
     return render_template('error_500.html')
 
+
 @app.errorhandler(404)
 def internal_error(error):
     return render_template('error_500.html')
-
 
 
 if __name__ == '__main__':
