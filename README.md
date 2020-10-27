@@ -6,9 +6,10 @@ Installation
 Download the repository and extract folder.
 
 
-Create a virtual environment::
+Create and activate a virtual environment::
 
     python3 -m venv venv
+    source venv/bin/activate
 
 Install requirements::
 
