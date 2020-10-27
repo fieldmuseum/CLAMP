@@ -1,3 +1,22 @@
-# CLAMP GUI
-<img src='https://repository-images.githubusercontent.com/250057363/664e4b80-0fb0-11eb-8fd4-ae3ae4f22c50'>
+# CLAMP CALCULATOR
+
+Installation
+------------
+
+Download the repository and extract folder.
+
+
+Create a virtual environment::
+
+    python3 -m venv venv
+
+Install requirements::
+
+    pip3 install -r requirements.txt
+
+Run the application::
+
+    python3 main.py
+
+
 All the photos are from http://clamp.ibcas.ac.cn
