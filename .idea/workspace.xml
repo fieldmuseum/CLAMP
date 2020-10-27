@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6ff2e76-9d30-4b50-a04f-d1254c7737e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/final.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/final.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lobing.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lobing.html" afterDir="false" />
-    </list>
+    <list default="true" id="d6ff2e76-9d30-4b50-a04f-d1254c7737e2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +27,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -43,7 +40,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="CLAMP" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -64,12 +61,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.main" />
-      </list>
-    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -87,26 +80,43 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="466" y="175" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603315659285">
-      <screen x="0" y="23" width="1440" height="809" />
+    <state x="449" y="257" key="#Notifications" timestamp="1603817240826">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state x="449" y="257" key="#Notifications/0.23.1440.806@0.23.1440.806" timestamp="1603817240826" />
+    <state x="184" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603817120384">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="184" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.806@0.23.1440.806" timestamp="1603817120384" />
+    <state x="466" y="174" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603823763522">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="466" y="174" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.806@0.23.1440.806" timestamp="1603823763522" />
     <state x="466" y="175" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.809@0.23.1440.809" timestamp="1603315659285" />
-    <state width="1306" height="226" key="GridCell.Tab.0.bottom" timestamp="1603316793408">
-      <screen x="0" y="23" width="1440" height="809" />
+    <state width="1311" height="194" key="GridCell.Tab.0.bottom" timestamp="1603827500605">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state width="1311" height="194" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1603827500605" />
     <state width="1306" height="226" key="GridCell.Tab.0.bottom/0.23.1440.809@0.23.1440.809" timestamp="1603316793408" />
-    <state width="1306" height="226" key="GridCell.Tab.0.center" timestamp="1603316793407">
-      <screen x="0" y="23" width="1440" height="809" />
+    <state width="1311" height="194" key="GridCell.Tab.0.center" timestamp="1603827500604">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state width="1311" height="194" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1603827500604" />
     <state width="1306" height="226" key="GridCell.Tab.0.center/0.23.1440.809@0.23.1440.809" timestamp="1603316793407" />
-    <state width="1306" height="226" key="GridCell.Tab.0.left" timestamp="1603316793406">
-      <screen x="0" y="23" width="1440" height="809" />
+    <state width="1311" height="194" key="GridCell.Tab.0.left" timestamp="1603827500603">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state width="1311" height="194" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1603827500603" />
     <state width="1306" height="226" key="GridCell.Tab.0.left/0.23.1440.809@0.23.1440.809" timestamp="1603316793406" />
-    <state width="1306" height="226" key="GridCell.Tab.0.right" timestamp="1603316793407">
-      <screen x="0" y="23" width="1440" height="809" />
+    <state width="1311" height="194" key="GridCell.Tab.0.right" timestamp="1603827500604">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
+    <state width="1311" height="194" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1603827500604" />
     <state width="1306" height="226" key="GridCell.Tab.0.right/0.23.1440.809@0.23.1440.809" timestamp="1603316793407" />
+    <state x="229" y="65" key="SettingsEditor" timestamp="1603817592344">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state x="229" y="65" key="SettingsEditor/0.23.1440.806@0.23.1440.806" timestamp="1603817592344" />
     <state x="239" y="235" width="1127" height="597" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1603155473147">
       <screen x="0" y="23" width="1440" height="809" />
     </state>
