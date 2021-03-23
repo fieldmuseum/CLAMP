@@ -1,23 +1,18 @@
 # CLAMP CALCULATOR
 
-Installation
-------------
+## Installation
 
 Download the repository and extract folder.
 
-
 Create and activate a virtual environment::
-
-    python3 -m venv venv
+    python -m venv venv
     source venv/bin/activate
 
 Install requirements::
-
-    pip3 install -r requirements.txt
+    pip install -r requirements.txt
 
 Run the application::
+    flask run
 
-    python3 main.py
-
-
+## Photo credit
 All the photos are from http://clamp.ibcas.ac.cn
